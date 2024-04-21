@@ -1,0 +1,18 @@
+name "FurnaceArray"
+
+every 20 ticks do
+    if redstone ge 1 then
+        input from in
+        output 4 to furnace round robin by block slots 0
+
+        forget
+
+        input from fuel
+        output 1 to furnace round robin by block slots 1
+
+        forget
+    
+        input from furnace slots 2
+        output to out
+    end
+end

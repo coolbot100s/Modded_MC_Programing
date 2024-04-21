@@ -80,8 +80,8 @@ end
 
 -- main loop
 rednet.open("back") -- rednet for lever
-local monX, monY = monitor.getSize()
 monitor.setTextScale(0.5)
+local monX, monY = monitor.getSize()
 monitor.setTextColor(colors.purple)
 
 

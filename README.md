@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### WARNING
 This project is very much a work in progress, almost everything is incomplete and subject to change, consider the repository as you see it now a proof of concept for what I hope will become a source of guidance and information for this niche subject, as well as a peak in my journey to learn these systems, I really hope this could some-day become a hub for finding solutions to common Minecraft problems for any computing mod out there, but even if that never happens it will stand as a repository for scripts I'm sure to be using time and time again.  
 I have a list of 25 mods and counting, however for now I'll only be covering the ones I have demonstrations available for.
@@ -80,3 +81,7 @@ This mod is meant purely for Logistics, you won't be able to do anything fancy w
 SFM is without a doubt the easiest mod to get into, if you have no programming experience or interest in coding but want to upgrade your factories and logistics systems this is the mod you should pick, it's custom scripting language is easy to read and learn and the in game editor is great. 
 
 
+=======
+# Modded_MC_Programming
+An informational repository storing builds, instructions, and scripts for the many "in-game programming" mods of Minecraft, such as Computer Craft, Open Computers, Super Factory Manager, and many more.
+>>>>>>> ebee5706bffa059f8d7062237b0f9c7342ef35cf

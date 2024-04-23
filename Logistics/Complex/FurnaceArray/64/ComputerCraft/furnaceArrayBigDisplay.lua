@@ -17,11 +17,12 @@ local islot = 1
 local fslot = 2
 local oslot = 3
 
-local input = peripheral.wrap("minecraft:chest_4")
-local fuel = peripheral.wrap("minecraft:chest_5")
-local output = peripheral.wrap("minecraft:chest_6")
+local input = peripheral.wrap("storagedrawers:standard_drawers_1_4")
+local fuel = peripheral.wrap("storagedrawers:standard_drawers_1_3")
+local output = peripheral.wrap("storagedrawers:standard_drawers_1_5")
 local monitor = peripheral.find("monitor")
 
+local rsDir = "right"
 
 local fuelcount = 0
 local queued = 0
@@ -52,17 +53,16 @@ function getInventoryTotal(inventory)
     return v
 end
 
+
 -- main loop
-rednet.open("back") -- rednet for lever
+
 monitor.setTextScale(0.5)
 local monX, monY = monitor.getSize()
 monitor.setTextColor(colors.purple)
 
 
 while (true) do
-    rednet.broadcast("query_lever")
-    local id, msg, protocol = rednet.receive()
-    if id == 19 and msg == true then
+    if rs.getInput(rsDir) then
         fuelcount = getInventoryTotal(fuel)
         queued = getInventoryTotal(input)
 

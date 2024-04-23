@@ -1,0 +1,1267 @@
+[
+    {
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "opcode": {
+        "id": "do_delay",
+        "primary": "L",
+        "parameters": [
+          {
+            "type": "integer",
+            "value": {
+              "v": 60
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 8,
+        "y": 8
+      },
+      "opcode": {
+        "id": "do_gfx_clear",
+        "parameters": [
+          {
+            "type": "string",
+            "value": {
+              "null": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 4,
+        "y": 5
+      },
+      "opcode": {
+        "id": "do_setvar",
+        "primary": "L",
+        "parameters": [
+          {
+            "type": "integer",
+            "value": {
+              "v": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 4,
+        "y": 6
+      },
+      "opcode": {
+        "id": "eval_countinv",
+        "primary": "R",
+        "parameters": [
+          {
+            "type": "inventory",
+            "value": {
+              "side": "east",
+              "node": "in"
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "null": true
+            }
+          },
+          {
+            "type": "item",
+            "value": {
+              "null": true
+            }
+          },
+          {
+            "type": "boolean",
+            "value": {
+              "null": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 4,
+        "y": 7
+      },
+      "opcode": {
+        "id": "do_wire",
+        "primary": "L",
+        "parameters": []
+      }
+    },
+    {
+      "pos": {
+        "x": 9,
+        "y": 2
+      },
+      "opcode": {
+        "id": "do_pushitems",
+        "primary": "L",
+        "parameters": [
+          {
+            "type": "inventory",
+            "value": {
+              "var": 1
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "v": 1
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "v": 1
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "v": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 9,
+        "y": 3
+      },
+      "opcode": {
+        "id": "eval_inventory",
+        "primary": "R",
+        "parameters": [
+          {
+            "type": "inventory",
+            "value": {
+              "fun": "last_inv"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 5,
+        "y": 2
+      },
+      "opcode": {
+        "id": "do_setvar",
+        "primary": "L",
+        "parameters": [
+          {
+            "type": "integer",
+            "value": {
+              "v": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 9,
+        "y": 6
+      },
+      "opcode": {
+        "id": "do_add_numbers",
+        "primary": "D",
+        "parameters": [
+          {
+            "type": "number",
+            "value": {
+              "fun": "last_number"
+            }
+          },
+          {
+            "type": "number",
+            "value": {
+              "var": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 5,
+        "y": 3
+      },
+      "opcode": {
+        "id": "test_eq_number",
+        "primary": "D",
+        "secondary": "r",
+        "parameters": [
+          {
+            "type": "number",
+            "value": {
+              "var": 0
+            }
+          },
+          {
+            "type": "number",
+            "value": {
+              "v": 65
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 9,
+        "y": 7
+      },
+      "opcode": {
+        "id": "do_setvar",
+        "primary": "L",
+        "parameters": [
+          {
+            "type": "integer",
+            "value": {
+              "v": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 5,
+        "y": 4
+      },
+      "opcode": {
+        "id": "eval_countinv",
+        "primary": "D",
+        "parameters": [
+          {
+            "type": "inventory",
+            "value": {
+              "side": "east",
+              "node": "fuel"
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "null": true
+            }
+          },
+          {
+            "type": "item",
+            "value": {
+              "null": true
+            }
+          },
+          {
+            "type": "boolean",
+            "value": {
+              "null": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 9,
+        "y": 8
+      },
+      "opcode": {
+        "id": "ev_signal",
+        "primary": "R",
+        "parameters": [
+          {
+            "type": "string",
+            "value": {
+              "v": "stop"
+            }
+          },
+          {
+            "type": "boolean",
+            "value": {
+              "null": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 1,
+        "y": 1
+      },
+      "opcode": {
+        "id": "do_text",
+        "primary": "D",
+        "parameters": [
+          {
+            "type": "string",
+            "value": {
+              "v": "1"
+            }
+          },
+          {
+            "type": "tuple",
+            "value": {
+              "x": 6,
+              "y": 7
+            }
+          },
+          {
+            "type": "string",
+            "value": {
+              "v": "Items Queud:"
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "v": 9194689
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 5,
+        "y": 5
+      },
+      "opcode": {
+        "id": "do_add_numbers",
+        "primary": "L",
+        "parameters": [
+          {
+            "type": "number",
+            "value": {
+              "fun": "last_number"
+            }
+          },
+          {
+            "type": "number",
+            "value": {
+              "var": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 1,
+        "y": 2
+      },
+      "opcode": {
+        "id": "do_setvar",
+        "primary": "D",
+        "parameters": [
+          {
+            "type": "integer",
+            "value": {
+              "v": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 5,
+        "y": 6
+      },
+      "opcode": {
+        "id": "do_setvar",
+        "primary": "R",
+        "parameters": [
+          {
+            "type": "integer",
+            "value": {
+              "v": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 1,
+        "y": 3
+      },
+      "opcode": {
+        "id": "eval_number",
+        "primary": "R",
+        "parameters": [
+          {
+            "type": "number",
+            "value": {
+              "v": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 5,
+        "y": 7
+      },
+      "opcode": {
+        "id": "do_wire",
+        "primary": "L",
+        "parameters": []
+      }
+    },
+    {
+      "pos": {
+        "x": 1,
+        "y": 4
+      },
+      "opcode": {
+        "id": "do_pushitems",
+        "primary": "U",
+        "parameters": [
+          {
+            "type": "inventory",
+            "value": {
+              "side": "east",
+              "node": "out"
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "null": true
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "null": true
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "v": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 1,
+        "y": 5
+      },
+      "opcode": {
+        "id": "do_fetchitems",
+        "primary": "U",
+        "parameters": [
+          {
+            "type": "inventory",
+            "value": {
+              "side": "east",
+              "node": "fuel"
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "null": true
+            }
+          },
+          {
+            "type": "item",
+            "value": {
+              "null": true
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "null": true
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "v": 1
+            }
+          },
+          {
+            "type": "boolean",
+            "value": {
+              "null": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 1,
+        "y": 6
+      },
+      "opcode": {
+        "id": "do_fetchitems",
+        "primary": "U",
+        "parameters": [
+          {
+            "type": "inventory",
+            "value": {
+              "side": "east",
+              "node": "in"
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "null": true
+            }
+          },
+          {
+            "type": "item",
+            "value": {
+              "null": true
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "null": true
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "v": 0
+            }
+          },
+          {
+            "type": "boolean",
+            "value": {
+              "null": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 1,
+        "y": 7
+      },
+      "opcode": {
+        "id": "do_wire",
+        "primary": "U",
+        "parameters": []
+      }
+    },
+    {
+      "pos": {
+        "x": 10,
+        "y": 2
+      },
+      "opcode": {
+        "id": "do_pushitems",
+        "primary": "L",
+        "parameters": [
+          {
+            "type": "inventory",
+            "value": {
+              "var": 1
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "v": 0
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "v": 1
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "v": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 10,
+        "y": 3
+      },
+      "opcode": {
+        "id": "do_setvar",
+        "primary": "U",
+        "parameters": [
+          {
+            "type": "integer",
+            "value": {
+              "v": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 6,
+        "y": 2
+      },
+      "opcode": {
+        "id": "do_add_numbers",
+        "primary": "L",
+        "parameters": [
+          {
+            "type": "number",
+            "value": {
+              "fun": "last_number"
+            }
+          },
+          {
+            "type": "number",
+            "value": {
+              "var": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 6,
+        "y": 3
+      },
+      "opcode": {
+        "id": "eval_string",
+        "primary": "R",
+        "parameters": [
+          {
+            "type": "string",
+            "value": {
+              "var": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 10,
+        "y": 8
+      },
+      "opcode": {
+        "id": "do_stop",
+        "parameters": []
+      }
+    },
+    {
+      "pos": {
+        "x": 2,
+        "y": 1
+      },
+      "opcode": {
+        "id": "do_text",
+        "primary": "L",
+        "parameters": [
+          {
+            "type": "string",
+            "value": {
+              "v": "2"
+            }
+          },
+          {
+            "type": "tuple",
+            "value": {
+              "x": 6,
+              "y": 18
+            }
+          },
+          {
+            "type": "string",
+            "value": {
+              "v": "Fuel Remaining: "
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "v": 9194689
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 2,
+        "y": 2
+      },
+      "opcode": {
+        "id": "do_add_numbers",
+        "primary": "D",
+        "parameters": [
+          {
+            "type": "number",
+            "value": {
+              "var": 0
+            }
+          },
+          {
+            "type": "number",
+            "value": {
+              "v": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "opcode": {
+        "id": "eval_number",
+        "primary": "R",
+        "parameters": [
+          {
+            "type": "number",
+            "value": {
+              "v": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 2,
+        "y": 3
+      },
+      "opcode": {
+        "id": "do_setvar",
+        "primary": "R",
+        "parameters": [
+          {
+            "type": "integer",
+            "value": {
+              "v": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 6,
+        "y": 7
+      },
+      "opcode": {
+        "id": "do_wire",
+        "primary": "L",
+        "parameters": []
+      }
+    },
+    {
+      "pos": {
+        "x": 2,
+        "y": 5
+      },
+      "opcode": {
+        "id": "do_add_numbers",
+        "primary": "D",
+        "parameters": [
+          {
+            "type": "number",
+            "value": {
+              "fun": "last_number"
+            }
+          },
+          {
+            "type": "number",
+            "value": {
+              "var": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 2,
+        "y": 6
+      },
+      "opcode": {
+        "id": "do_setvar",
+        "primary": "R",
+        "parameters": [
+          {
+            "type": "integer",
+            "value": {
+              "v": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 2,
+        "y": 7
+      },
+      "opcode": {
+        "id": "do_wire",
+        "primary": "L",
+        "parameters": []
+      }
+    },
+    {
+      "pos": {
+        "x": 7,
+        "y": 2
+      },
+      "opcode": {
+        "id": "eval_countinv",
+        "primary": "L",
+        "parameters": [
+          {
+            "type": "inventory",
+            "value": {
+              "var": 1
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "v": 1
+            }
+          },
+          {
+            "type": "item",
+            "value": {
+              "null": true
+            }
+          },
+          {
+            "type": "boolean",
+            "value": {
+              "null": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 7,
+        "y": 3
+      },
+      "opcode": {
+        "id": "do_concat",
+        "primary": "R",
+        "parameters": [
+          {
+            "type": "string",
+            "value": {
+              "v": "f"
+            }
+          },
+          {
+            "type": "string",
+            "value": {
+              "fun": "last_str"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 3,
+        "y": 1
+      },
+      "opcode": {
+        "id": "eval_number",
+        "primary": "L",
+        "parameters": [
+          {
+            "type": "number",
+            "value": {
+              "v": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 3,
+        "y": 2
+      },
+      "opcode": {
+        "id": "do_wire",
+        "primary": "L",
+        "parameters": []
+      }
+    },
+    {
+      "pos": {
+        "x": 7,
+        "y": 6
+      },
+      "opcode": {
+        "id": "do_setvar",
+        "primary": "R",
+        "parameters": [
+          {
+            "type": "integer",
+            "value": {
+              "v": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "opcode": {
+        "id": "eval_rs",
+        "primary": "R",
+        "parameters": [
+          {
+            "type": "side",
+            "value": {
+              "side": "east",
+              "node": "button"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 7,
+        "y": 7
+      },
+      "opcode": {
+        "id": "do_wire",
+        "primary": "L",
+        "parameters": []
+      }
+    },
+    {
+      "pos": {
+        "x": 3,
+        "y": 4
+      },
+      "opcode": {
+        "id": "do_wire",
+        "primary": "U",
+        "parameters": []
+      }
+    },
+    {
+      "pos": {
+        "x": 7,
+        "y": 8
+      },
+      "opcode": {
+        "id": "ev_signal",
+        "primary": "R",
+        "parameters": [
+          {
+            "type": "string",
+            "value": {
+              "v": "cleargfx"
+            }
+          },
+          {
+            "type": "boolean",
+            "value": {
+              "null": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 3,
+        "y": 5
+      },
+      "opcode": {
+        "id": "eval_countinvint",
+        "primary": "L",
+        "parameters": [
+          {
+            "type": "integer",
+            "value": {
+              "v": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 3,
+        "y": 6
+      },
+      "opcode": {
+        "id": "do_text",
+        "primary": "R",
+        "parameters": [
+          {
+            "type": "string",
+            "value": {
+              "v": "fuel"
+            }
+          },
+          {
+            "type": "tuple",
+            "value": {
+              "x": 104,
+              "y": 18
+            }
+          },
+          {
+            "type": "string",
+            "value": {
+              "var": 2
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "v": 9194689
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 3,
+        "y": 7
+      },
+      "opcode": {
+        "id": "do_wire",
+        "primary": "L",
+        "parameters": []
+      }
+    },
+    {
+      "pos": {
+        "x": 8,
+        "y": 2
+      },
+      "opcode": {
+        "id": "do_fetchitems",
+        "primary": "L",
+        "parameters": [
+          {
+            "type": "inventory",
+            "value": {
+              "var": 1
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "v": 2
+            }
+          },
+          {
+            "type": "item",
+            "value": {
+              "null": true
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "null": true
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "v": 2
+            }
+          },
+          {
+            "type": "boolean",
+            "value": {
+              "null": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 8,
+        "y": 3
+      },
+      "opcode": {
+        "id": "do_concat",
+        "primary": "R",
+        "parameters": [
+          {
+            "type": "string",
+            "value": {
+              "fun": "last_str"
+            }
+          },
+          {
+            "type": "string",
+            "value": {
+              "v": " S/*"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 4,
+        "y": 1
+      },
+      "opcode": {
+        "id": "ev_signal",
+        "primary": "L",
+        "parameters": [
+          {
+            "type": "string",
+            "value": {
+              "v": "start"
+            }
+          },
+          {
+            "type": "boolean",
+            "value": {
+              "v": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 4,
+        "y": 2
+      },
+      "opcode": {
+        "id": "do_wire",
+        "primary": "L",
+        "parameters": []
+      }
+    },
+    {
+      "pos": {
+        "x": 8,
+        "y": 6
+      },
+      "opcode": {
+        "id": "eval_countinvint",
+        "primary": "R",
+        "parameters": [
+          {
+            "type": "integer",
+            "value": {
+              "v": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 4,
+        "y": 3
+      },
+      "opcode": {
+        "id": "test_eq_number",
+        "primary": "R",
+        "secondary": "d",
+        "parameters": [
+          {
+            "type": "number",
+            "value": {
+              "fun": "last_number"
+            }
+          },
+          {
+            "type": "number",
+            "value": {
+              "v": 15
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pos": {
+        "x": 8,
+        "y": 7
+      },
+      "opcode": {
+        "id": "do_text",
+        "primary": "L",
+        "parameters": [
+          {
+            "type": "string",
+            "value": {
+              "v": "queued"
+            }
+          },
+          {
+            "type": "tuple",
+            "value": {
+              "x": 104,
+              "y": 7
+            }
+          },
+          {
+            "type": "string",
+            "value": {
+              "var": 3
+            }
+          },
+          {
+            "type": "integer",
+            "value": {
+              "v": 9194689
+            }
+          }
+        ]
+      }
+    }
+  ]

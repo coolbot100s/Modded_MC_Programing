@@ -1,0 +1,4 @@
+Scaling the furnace array with CC:T is pretty simple, the only tweaks I've made here is changing the values of the inputs and output peripheral names, switching the lever input from using rednet to simply using the main computer to detect redstone since the lever is now right next to it.  
+However using the "display" version does significantly slow things down, and the display itself becomes innacurate.  
+Now the thing about ComputerCraft is that this can probably be fixed by simply writting better code, however, I've not done that.  
+Now, sticking to the no frills original script, it's perfectly effective with very few tweaks needed and able to run exceptionally fast.

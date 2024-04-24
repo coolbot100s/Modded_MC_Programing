@@ -132,7 +132,7 @@ Once you've created the program in a Programmer put it in the slot and insert a 
 Next, press the button above the program slot the itemPipe program is inside, this will let you allocate item and memory slots for the program.  
 Allocate one item slot, this will now have the label 0, indicating the index that the program will recognize the slot as.    
 Place a button on the front of the processor, and use it to start the program.  
-![rftc_item_pipe]()
+![rftc_item_pipe](https://raw.githubusercontent.com/coolbot100s/Modded_MC_Programming/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/RFToolsControl/rftc_item_pipe.png)
 #### Cost
 |Item|Count|
 |-|-|

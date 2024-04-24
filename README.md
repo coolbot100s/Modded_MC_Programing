@@ -33,11 +33,11 @@ To keep things fair across multiple loaders and versions of the game I'll be usi
 
 ### Benchmarking 
 *Currently this is the most "WIP" section, I will eventually completely redo all benchmarks on a more neutral system, this is simply the stats of my setup for now*
-
+  
 Many tests will include information on the performance impact the builds have on the server, note that currently these tests are NOT the most reliable and should be taken with a grain of salt. For now, they're done in the same single-player building world, here's the specs:
 
-GPU: Radeon RX 7800 XT
-CPU: Ryzen 7 7800X3D 8-Core
+GPU: Radeon RX 7800 XT  
+CPU: Ryzen 7 7800X3D 8-Core  
 RAM: 32GB @4800 MHz 
 
 For Java 17 instances, I use Eclipse Adoptium 17.0.10 with 10GB of allocated memory and custom JVM arguments mostly taken from [this guide here](https://github.com/brucethemoose/Minecraft-Performance-Flags-Benchmarks?tab=readme-ov-file) 

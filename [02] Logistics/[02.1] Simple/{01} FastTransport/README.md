@@ -73,6 +73,7 @@ TIP 2: Writting your script first and pulling labels from the Factory Manager wi
 Factory Manager| 1
 Factory Manager Program Disk| 1
 Label Gun*| 1  
+  
 *\*Label Gun is a tool and is reusable*   
 ![sfm-total-cost](https://github.com/coolbot100s/Modded_MC_Programming/blob/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/SuperFactoryManager/sfm_item_pipe_cost_total.png?raw=true)  
 

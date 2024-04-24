@@ -134,11 +134,11 @@ FE| 4/tick
   
 ![rftc_minimum_total_cost](https://github.com/coolbot100s/Modded_MC_Programming/blob/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/RFToolsControl/rftc_item_pipe_min_cost_total.png?raw=true)  
 ### Code
-![rftc_item_pipe_code](https://github.com/coolbot100s/Modded_MC_Programming/blob/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/RFToolsControl/rftc_item_pipe_code.png?raw=true)
+![rftc_item_pipe_code](https://github.com/coolbot100s/Modded_MC_Programming/blob/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/RFToolsControl/rftc_item_pipe_code.png?raw=true)  
 The code is incredibly simple, at just 3 opcodes.  
 First a way of starting the program, in the example script we'll be using `redstone on` direct that into a Fetch Items > Push Items and direct the Push Items back into the Fetch Items. 
 This creates a very speedy loop of constantly moving items.  
-It's important to remember that RFTC programs are directional and rely on the cardinal directions to define inventory locations, in the demonstration, the processor is facing East and it is assumed that the input and output or on the left and right respectively. 
+It's important to remember that RFTC programs are directional and rely on the cardinal directions to define inventory locations, in the demonstration, the processor is facing East and it is assumed that the input and output are on the left and right respectively. 
 
 ### Results
 Since the B500 executes 1 operation per tick, and it takes 2 op-codes to move a stack of items from input to output, it means we're moving 1 stack every 2 ticks, or 0.5 stacks/tick, but this can be upgraded
@@ -171,7 +171,7 @@ First, place a full block Wired Modem between between the input and output.
 Unlike the [Hello World](https://github.com/coolbot100s/Modded_MC_Programming/tree/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B01%5D%20Computing/%7B01%7D%20HelloWorld) tests, we need to use a modem to interact with inventory peripherals.  
 Now, right-click the modem and it will list the names of peripherals connected to it, using the test setup this will be something like `"storagedrawers:standard_drawers_1_#"`, make sure you copy these and keep them on a notepad, you'll need these to define the peripherals in your script.  
 Now you can place the computer on top, and import your script.  
-Note that for this, and all future tests I'll be using an Advanced Computer (turtle, pocket computer, ect.), and this will be reflected in the cost calculations. In most cases, a regular Computer will suffice, but the Advanced Computer is much more convenient and recommended.  
+Note that for this, and all future tests I'll be using an Advanced Computer (turtle, pocket computer, etc.), and this will be reflected in the cost calculations. In most cases, a regular Computer will suffice, but the Advanced Computer is much more convenient and recommended.  
 
 #### Cost
 |Item|Count|
@@ -184,7 +184,7 @@ Wired Modem (full)| 1
 ### Code
 While relatively simple, we can already see that this is a bit more complicated than the other systems we've discussed so far.  
 First, you can't drop this build anywhere in the world like the other systems we've tested so far.  
-The peripheral variables (line [7](https://github.com/coolbot100s/Modded_MC_Programming/blob/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/ComputerCraft/itemPipe.lua#L7) & [8](https://github.com/coolbot100s/Modded_MC_Programming/blob/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/ComputerCraft/itemPipe.lua#L8)) expect specific blocks, in specific locations, and are numbered based on how many connections to these blocks have been made in your world, meaning you'll need to edit the script with these names every time you try to set up the script.  
+The peripheral variables (lines [7](https://github.com/coolbot100s/Modded_MC_Programming/blob/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/ComputerCraft/itemPipe.lua#L7) & [8](https://github.com/coolbot100s/Modded_MC_Programming/blob/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/ComputerCraft/itemPipe.lua#L8)) expect specific blocks, in specific locations, and are numbered based on how many connections to these blocks have been made in your world, meaning you'll need to edit the script with these names every time you try to set up the script.  
 Additionally, while all the other systems we've looked at *let* you define a specific input slot, here it is required  in order to prevent unexpected behavior. (lines [16](https://github.com/coolbot100s/Modded_MC_Programming/blob/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/ComputerCraft/itemPipe.lua#L16) & [17](https://github.com/coolbot100s/Modded_MC_Programming/blob/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/ComputerCraft/itemPipe.lua#L16))  
 In return for this comparative rigidity and complexity, we get *much* more control, such as printing out errors when the output is missing, and transferring the exact amount necessary when present.  
 This is a trend we'll continue to see throughout future tests, while cc:t can be a bit difficult to work with, it provides everything you need to make extremely powerful and complicated programs.

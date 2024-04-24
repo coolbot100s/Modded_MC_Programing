@@ -1,4 +1,4 @@
-# CC: Tweaked Item Pipe
+# RFTools Control Item Pipe
 
 ## Test Results
 | Mod                   | Items / tick | Stacks / tick | Items / second | Total ticks | Total time |

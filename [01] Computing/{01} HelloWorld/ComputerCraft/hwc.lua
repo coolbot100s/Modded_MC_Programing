@@ -1,8 +1,9 @@
 -- Hello World C
 -- Code example from https://tweaked.cc/peripheral/printer.html
 -- MC version 1.20.1, CC:Tweaked version 1.110.2
+-- Print a page from a connected printer, given paper and ink when the program is ran.
 
--- Print a page from a connected printer, given paper and ink when ran.
+
 local printer = peripheral.find("printer")
 
 -- Start a new page, or print an error.
@@ -12,7 +13,7 @@ end
 
 -- Write to the page
 printer.setPageTitle("'sup planet?")
-printer.write("Hello, World!")
+printer.write("Hello, world!")
 
 -- And finally print the page!
 if not printer.endPage() then

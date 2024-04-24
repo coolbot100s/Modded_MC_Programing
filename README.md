@@ -1,5 +1,6 @@
 ### WARNING
-This project is very much a work in progress, almost everything is incomplete and subject to change, consider the repository as you see it now a proof of concept for what I hope will become a source of guidance and information for this niche subject, as well as a peak in my journey to learn these systems, I really hope this could some-day become a hub for finding solutions to common Minecraft problems for any computing mod out there, but even if that never happens it will stand as a repository for scripts I'm sure to be using time and time again.  
+This project is very much a work in progress, almost everything is incomplete and subject to change, consider the repository as you see it now a proof of concept for what I hope will become a source of guidance and information for this niche subject, as well as a peak in my journey to learn these systems.  
+I really hope this could some-day become a hub for finding solutions to common Minecraft problems for any computing mod out there, but even if that never happens it will stand as a repository for scripts I'm sure to be using time and time again.  
 I have a list of 25 mods and counting, however for now I'll only be covering the ones I have demonstrations available for.
 Contributions and feedback are more than welcome.
 
@@ -7,6 +8,13 @@ Contributions and feedback are more than welcome.
 An informational repository storing builds, instructions, and scripts for the many "in-game programming" mods of Minecraft, such as Computer Craft, Open Computers, Super Factory Manager, and many more.  
 You can navigate the repository by browsing the folders, each one containing data comparing and contrasting the corresponding experiment, such as performance benchmarks, setup costs, and versatility. Can't decide whether to use Integrated Dynamics or Super Factory Manager to control your wall of ae2 inscribers? Maybe you want to demolish your friends in a battle of wizardry and aren't sure which magic system to dive into. This is your map to the best solution for any scenario.
 
+## How to use
+If you're an experienced modded Minecraft player and are just here to copy builds and code, then navigating the folders to find the task you're trying to accomplish is all you have to worry about.  
+These are broken down into broad categories, and then specific tasks, and finally all files relavent to a machine are seperated into their own folders by mod.  
+If you want to know how each of these mods compare at a specific task, whether that be their effeciency, speed, server performance, or resource cost, then make sure you're taking a look at each folder's README file. Each one will contain detailed information, as well as tables or graphs comparing each system's qualities where relavent.
+  
+If you're new to this and looking to learn how these mods work, then continue reading or look for what most interests you. Keep in mind there is a bit of an intended order for new readers, with simpler concepts and tasks being covered first, and the complexity ramping up as you go deeper.
+Early categories and tests will also generally include detailed walkthroughs of setup that later examples with not include.
 
 ### A pretentious plee for your interest
 You might be here because you love to find yourself placed in a sandbox of near-infinite possibilities, a blank canvas where you can set any goal and with enough creativity build yourself a solution.  

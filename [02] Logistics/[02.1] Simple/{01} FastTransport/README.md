@@ -1,29 +1,52 @@
 # Item Transport Speed
 
 You need to move items, no matter what environment you're in, you need to move items around when you're playing Minecraft.  
-Getting things from point A to point B is important, so how do our computing mods Empower us to do that?  
+Getting things from point A to point B is important, so how do our computing mods empower us to do that?  
 In this test our goal is simply to move a lot of items, we'll be using Storage Drawers with a Creative Drawer filled with cobblestone as our input, and an empty drawer with maxed out Storage Upgrades, giving our output a capacity of 458752.  
+All durations assume 20 ticks per second.  
 What's the practical application? There's very few but one that may come to mind is the ae2 Matter Condensor, if you do find yourself with an unlimited supply of items and need singularities fast, this is exactly what you're looking for.  
-All durations assume 20 ticks per second.
 
-## Vanilla / Control
+### Contents:
+- **Control Tests**
+    - [Vanilla](#vanilla)  
+    - [Integrated Dynamics](#integrated-dynamics)
+- **Tests**
+    - [Super Factory Manager](#super-factory-manager)
+      - [Cheesing SFM](#cheesing-sfm)
+    - [RFTools Control](#rftools-control)
+        - [RFTools Control CPUs](#rftools-control-cpus)
+- [Results](#test-results) 
+- [Additional Mods Used](#additional-mods-used)
+
+
+## Vanilla
+This section will go over what trying to complete the test in vanilla alone may look like, acting as a sort of control test.  
+This will be heavily condensed without providing tutorials, however, schematics can still be located in the [appropriate folder]().  
+  
 It's no secret moving things in vanilla is slow, hoppers are slow and inefficient, sure you could simply place a hopper and be done with it... but with the mighty Hopper's transfer rate of 1 item every 8 ticks it'll take us over **2 days** to complete the test.
 ![VanillaHopper]()
 You could speed this up by using a a hopper Minecart and a *few* more hoppers, but this hopper abomination is going to impact server preformance more than any of the solutions the mods below permit.
 ![VanillaHopperCart]()
 This is naturally, 4 times faster, at a whopping 10 items per tick, it'll fill up our output in 12 hours and 44 minutes.
 
+#### Cost
+| Item | Count |
+|-|-|
+|Hopper Minecart| 1 |
+|Hopper| 12
+
 
 ## Integrated Dynamics
 To be honest with you, this test involves no programming, however it acts as a form of control for this simple test, the setup is one of the easiest and still really quick as a standard logistics mod. As with all Logistics tests, this will require the Integrated Tunnles add-on.
 
 ### Construction & Setup
-Simply place a Logic Cable and slap an Item Interface on the input, an Item Exporter on the output. Note that you could also flip this, using an importer to pull from input. 
-Next, simply add any Variable Card to the Export All Items slot.
-Make sure the Exporter is set to 1 Ticks/Operation in its Part Settings Menu.
+Simply place a Logic Cable between the input and out and slap an Item Interface on the input, an Item Exporter on the output.  
+TIP: You could also flip this, using an importer to pull from input.  
+Next, add an empty Variable Card to the Export All Items slot.  
+Make sure the Exporter is set to 1 Ticks/Operation in its Part Settings Menu.  
 ![IntegratedDynamics]() 
 
-### Cost
+#### Cost
 | Item | Count |
 |-|-|
 Logic Cable | 1
@@ -38,3 +61,122 @@ This Integrated Dynamics system will transport 64 items / tick, completing our t
 SFM is quite literally made for this, its one job is logistics, so, how does it do in a simple race? Well... it's built with performance in mind and as such limits the player by default to one execution per second, this is plenty in most scenarios but does mean that it falls behind here, however, there are loop holes and we'll take a look at thoes as well.
 
 ### Construction & Setup
+Place a Factory Manager between the input and output, remember to craft a program card and put that in your Factory Manager via the GUI.  
+Now, click the edit button, and write ([or paste]()) your script.  
+Next, grab a Label Gun, label the input block as "in" and the output block as "out." 
+TIP: Labeling an inventory as "input" or "output" will cause errors, since these keywords are apart of the sfm language.  
+TIP 2: Writting your script first and pulling labels from the Factory Manager will prevent typos.  
+![sfm_item_pipe]()
+
+#### Cost
+| Item | Count |
+|-|-|
+Factory Manager| 1
+Factory Manager Program Disk| 1
+Label Gun*| 1
+
+*\*Label Gun is a tool item that is reusable* 
+
+### Code
+The [itemPipe.sfm]() script is a mere 4 lines long, showcasing the ease of logistical tasks using SFM.  
+```
+every 20 ticks do
+    input from in
+    output to out
+end
+```
+This script is perfectly dynamic and will work with any amount of inventories with the same labels.  
+
+### Results
+Unfortinately, SFM dissapoints in terms of speed, the simple script shown above will transfer items out of the input Storage Drawer at a rate of 2 stacks / second, however... this can be Improved.
+
+## Cheesing SFM
+This section will cover a few tricks you can do when using SFM to make it faster at the cost of code readability, stability, and server performance. These two methods are generally applicable to all SFM scripts, and any further tests in the logistics category will ignore these abilities.
+
+### Redstone clock
+By triggering our Script whenever a redstone pulse is activated, we can connect a redstone clock to the Factory Manager and get it to fire every redstone tick, or every 2 game ticks.  In the provided example I've used a Timer from RFToolsUtility.  
+`every 20 ticks do` > `every redstone pulse do`  
+Already, our script executes 10x faster, but we can improve it further.  
+
+### Spam
+For this test, output has no limitation on the items it can accept, however our input will only let the manager pull 128 items at a time.  
+To bypass that limit, you simply need to repeat the input operation, you can do this as many times as you'd like, for demonstration the [itemPipeCheese.sfm]() script repeats the operation 128 times. Naturally, the script will operate 128x faster, when combined with the redstone clock technique this setup executes 1280x faster than the original method.  
+
+### Server Impact
+In my testing, using a super fast redstone clock has broken the Factory Manager's built in profiler. However, testing with Observable indicates that, when idle, this method is 50-60 times more impactful on the server than the original script, or barely any more performant than vanilla. When active, ~100x the impact making it at least double the server cost of just using a Hopper Minecart. 
+This does not account for the impact of the redstone clock, which will vary greatly depending on your implimentation, generally speaking the RFTU Timer is very performant and has a negligable impact. 
+
+### Takeaways
+Because of the massive performance impact, the lack of readability, extra setup requirements, and the possibility behaviour around spamming is modified in future updates I will generally avoid using these in testing or in any provided demonstration scripts.  
+However, the one exception is power draw, for any complex systems which require the distrobution of power, it may be neccessary to impliment a bit of spamming for the manager to be able to carry power, this will depend heavily on what mods, even which specific blocks are being interfaced with.
+
+## RFTools Control
+RFtools Control has a special quirk to keep in mind when it comes to item transportation. 
+The processor cannot transfer items directly from one inventory to another, rather, it will import the items to it's own internal inventory, and then export items from the internal slot to an external inventory.  
+This at first sounds inneficient but as we'll see, RFTC is quite powerful.  
+
+### Construction & Setup
+There's a few more steps involved in setting up RFTC, place the processor between the input and output, and for the deomstration script, add a button on the front. This is optional as we'll be using it to activate the program, but you could instead trigger it with a signal like the HelloWorld program.  
+Once you've created the program in a Programmer put it in the slot and insert a CPU.  
+Next, press the button above the program slot the itemPipe program is inside, this will let you allocate item and memory slots for the program.  
+Allocate one item slot, this will now have the label 0, indicating the index that the program will recognize the slot as.    
+Place a button on the front of the processor, and use it to start the program.
+
+#### Cost
+|Item|Count|
+|-|-|
+Processor|1
+Oak Button|1
+Program Card|1
+CPU Core B500|1
+FE| 4/tick
+
+### Code
+![rftc_item_pipe_code]()
+The code is increadibly simple, at just 3 opcodes.  
+First a way of starting the program, in the example script we'll be using `redstone on` direct that into a Fetch Items > Push Items and direct the Push Items back into the Fetch Items. 
+This creates a very speedy loop of constantly moving items.  
+It's important to remember that RFTC programs are directional and rely on cardinal direction to define inventory locations, in the demonstration, the processor is facing East and it is assumed that the input and output or on the left and right respectively. 
+
+### Results
+Since the B500 executes 1 operation per tick, and it takes 2 op codes to move a stack of items from input to output, it means we're moving 1 stack every 2 ticks, or 0.5 stacks/tick, but this can be upgraded
+
+## RFTools Control CPUS
+The example above is the absolute cheapest construction, however, by investing more resources we can speed this program up dramatically.  
+The first step is to use a CPU Core EX2000 in place ofthe B500, this is 16 time faster but requires more rf/t.
+Additionally, we can run multiple instances of our program in a single processor, one for each of the 6 program slots, if each program is given their own CPU using exclusive mode.  
+Make sure to enable exclusive mode in the processor gui.
+If we use all 6 slots and add 6 EX200 CPU cores, then we can transport items 96x faster!  
+This is of course, more expensive, both in resources and power, but this optimization tactic is something to keep in mind as it's often worth it.  
+Unlike cheesing SFM, this does not produce too much extra lag, while being roughly 16x more resource intensive then the minimum build, this is rather intuitive as the processors being used are 16x faster.  
+That being said, going forward tests will assume using 1 instance of the corresponding program(s) and utalizing 1 EX2000 CPU Core.  
+#### Cost
+|Item|Count|
+|-|-|
+Processor|1
+Oak Button|1
+Program Card|6
+CPU Core EX2000|6
+FE|300/tick
+
+## CC: Tweaked
+
+## Test Results
+| Mod                   | Items / tick | Stacks / tick | Items / second | Total ticks | Total time |
+|-|-|-|-|-|-|
+| CC: Tweaked           | INF          | INF           | INF            | 1           | 0:00:00 |
+| SFM (cheese)          | 8192         | 128           | 163840         | 56          | 0:00:02 |
+| RFTC 6 CPUs           | 3072         | 48            | 61440          | 149         | 0:00:07 |
+| RFTC/CPU              | 512          | 8             | 10240          | 896         | 0:00:44 |
+| Integrated Dynamics   | 64           | 1             | 1280           | 7,168       | 0:05:58 |
+| RFTC (B500)           | 32           | 0.5           | 640            | 14,336      | 0:11:56 |
+| SFM                   | 6.4          | 0.1           | 128            | 71,680      | 0:59:44 |
+| Vanilla (Minecart)    | 0.5          | 0.0078125     | 10             | 917,504     | 12:44:35|
+| Vanilla               | 0.125        | 0.001953125   | 2.5            | 3,670,016   | 50:58:20|
+
+## Additional Mods Used
+[Observable](https://modrinth.com/mod/observable/version/4.4.1+forge)
+[RF Tools Utility](https://modrinth.com/mod/rftools-utility/version/1.20-6.0.6)
+[Mekanism](https://modrinth.com/mod/mekanism/version/10.4.6.20)
+[Integrated Tunnels](https://modrinth.com/mod/integrated-tunnels/version/1.20.1-1.8.26)
+

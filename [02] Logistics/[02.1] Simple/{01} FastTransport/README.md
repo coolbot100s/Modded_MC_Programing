@@ -21,11 +21,16 @@ What's the practical application? There are very few but one that may come to mi
 
 ## Vanilla
 This section will go over what trying to complete the test in vanilla alone may look like, acting as a sort of control test.  
-This will be heavily condensed without providing tutorials, however, schematics can still be located in the [appropriate folder](https://github.com/coolbot100s/Modded_MC_Programming/tree/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/Vanilla).  
+This will be heavily condensed without providing tutorials, however, schematics can still be found in the [appropriate folder](https://github.com/coolbot100s/Modded_MC_Programming/tree/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/Vanilla).  
   
 Sure you could simply place a hopper and be done with it... But it's no secret moving things in vanilla is slow, hoppers are slow and inefficient, with the mighty Hopper's transfer rate of 1 item every 8 ticks it'll take us over **2 days** to complete the test.  
-You could speed this up by using a hopper Minecart and a *few* more hoppers, but this hopper abomination is going to impact server performance more than any of the solutions the mods below permit.  
-![VanillaHopperCart](https://github.com/coolbot100s/Modded_MC_Programming/blob/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/Vanilla/mc_item_pipe.png?raw=true)  
+You could speed this up by using a hopper Minecart and a *few* more hoppers, but this hopper abomination is going to impact server performance more than any of the solutions the mods below permit.    
+<img 
+    style="display: block; 
+           width: 30%;"
+    src="https://github.com/coolbot100s/Modded_MC_Programming/blob/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/Vanilla/mc_item_pipe.png?raw=true" 
+    alt="VanillaHopperCart">
+</img>  
 This is naturally, 4 times faster, at a whopping 10 items per tick, it'll fill up our output in 12 hours and 44 minutes.  
 
 #### Cost
@@ -39,12 +44,17 @@ This is naturally, 4 times faster, at a whopping 10 items per tick, it'll fill u
 To be honest with you, this test involves no programming, however, it acts as a form of control for this simple test, the setup is one of the easiest and still really quick as a standard logistics mod. As with all Logistics tests, this will require the Integrated Tunnles add-on.
 
 ### Construction & Setup
-Simply place a Logic Cable between the input and out and slap an Item Interface on the input, an Item Exporter on the output.  
+Simply place a Logic Cable between the input and out and slap an Item Interface on the input, and an Item Exporter on the output.  
 TIP: You could also flip this, using an importer to pull from input.  
 Next, add an empty Variable Card to the Export All Items slot.  
 Make sure the Exporter is set to 1 Ticks/Operation in its Part Settings Menu.  
-![IntegratedDynamics](https://github.com/coolbot100s/Modded_MC_Programming/blob/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/IntegratedDynamics/id_item_pipe.png?raw=true) 
-
+<img 
+    style="display: block; 
+           width: 30%;"
+    src="https://github.com/coolbot100s/Modded_MC_Programming/blob/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/IntegratedDynamics/id_item_pipe.png?raw=true" 
+    alt="IntegratedDynamics">
+</img>
+  
 #### Cost
 | Item | Count |
 |-|-|

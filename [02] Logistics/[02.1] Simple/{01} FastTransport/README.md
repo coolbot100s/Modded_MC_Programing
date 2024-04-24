@@ -2,8 +2,8 @@
 
 You need to move items. No matter what environment you're in you need to move items around when you're playing Minecraft.  
 Getting things from point A to point B is important, so how do our computing mods empower us to do that?  
-In this test our goal is simply to move a lot of items, we'll be using Storage Drawers with a Creative Drawer filled with cobblestone as our input, and an empty drawer with maxed out Storage Upgrades, giving our output a capacity of 458,752.    
-What's the practical application? There's very few but one that may come to mind is the ae2 Matter Condensor, if you do find yourself with an unlimited supply of items and need singularities fast, this is exactly what you're looking for.  
+In this test our goal is simply to move a lot of items, we'll be using Storage Drawers with a Creative Drawer filled with cobblestone as our input, and an empty drawer with maxed-out Storage Upgrades, giving our output a capacity of 458,752.    
+What's the practical application? There are very few but one that may come to mind is the ae2 Matter Condensor, if you do find yourself with an unlimited supply of items and need singularities fast, this is exactly what you're looking for.  
 
 ### Contents:
 - **Control Tests**
@@ -21,13 +21,12 @@ What's the practical application? There's very few but one that may come to mind
 
 ## Vanilla
 This section will go over what trying to complete the test in vanilla alone may look like, acting as a sort of control test.  
-This will be heavily condensed without providing tutorials, however, schematics can still be located in the [appropriate folder]().  
+This will be heavily condensed without providing tutorials, however, schematics can still be located in the [appropriate folder](https://github.com/coolbot100s/Modded_MC_Programming/tree/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/Vanilla).  
   
-It's no secret moving things in vanilla is slow, hoppers are slow and inefficient, sure you could simply place a hopper and be done with it... but with the mighty Hopper's transfer rate of 1 item every 8 ticks it'll take us over **2 days** to complete the test.
-![VanillaHopper]()
-You could speed this up by using a a hopper Minecart and a *few* more hoppers, but this hopper abomination is going to impact server preformance more than any of the solutions the mods below permit.
-![VanillaHopperCart]()
-This is naturally, 4 times faster, at a whopping 10 items per tick, it'll fill up our output in 12 hours and 44 minutes.
+It's no secret moving things in vanilla is slow, hoppers are slow and inefficient, sure you could simply place a hopper and be done with it... but with the mighty Hopper's transfer rate of 1 item every 8 ticks it'll take us over **2 days** to complete the test.  
+You could speed this up by using a hopper Minecart and a *few* more hoppers, but this hopper abomination is going to impact server preformance more than any of the solutions the mods below permit.  
+![VanillaHopperCart](https://github.com/coolbot100s/Modded_MC_Programming/blob/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/Vanilla/mc_item_pipe.png?raw=true)  
+This is naturally, 4 times faster, at a whopping 10 items per tick, it'll fill up our output in 12 hours and 44 minutes.  
 
 #### Cost
 | Item | Count |
@@ -37,14 +36,14 @@ This is naturally, 4 times faster, at a whopping 10 items per tick, it'll fill u
 
 
 ## Integrated Dynamics
-To be honest with you, this test involves no programming, however it acts as a form of control for this simple test, the setup is one of the easiest and still really quick as a standard logistics mod. As with all Logistics tests, this will require the Integrated Tunnles add-on.
+To be honest with you, this test involves no programming, however, it acts as a form of control for this simple test, the setup is one of the easiest and still really quick as a standard logistics mod. As with all Logistics tests, this will require the Integrated Tunnles add-on.
 
 ### Construction & Setup
 Simply place a Logic Cable between the input and out and slap an Item Interface on the input, an Item Exporter on the output.  
 TIP: You could also flip this, using an importer to pull from input.  
 Next, add an empty Variable Card to the Export All Items slot.  
 Make sure the Exporter is set to 1 Ticks/Operation in its Part Settings Menu.  
-![IntegratedDynamics]() 
+![IntegratedDynamics](https://github.com/coolbot100s/Modded_MC_Programming/blob/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/IntegratedDynamics/id_item_pipe.png?raw=true) 
 
 #### Cost
 | Item | Count |
@@ -62,23 +61,24 @@ SFM is quite literally made for this, its one job is logistics, so, how does it 
 
 ### Construction & Setup
 Place a Factory Manager between the input and output, remember to craft a program card and put that in your Factory Manager via the GUI.  
-Now, click the edit button, and write ([or paste]()) your script.  
+Now, click the edit button, and write ([or paste](https://github.com/coolbot100s/Modded_MC_Programming/blob/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/SuperFactoryManager/itemPipe.sfm)) your script.  
 Next, grab a Label Gun, label the input block as "in" and the output block as "out." 
 TIP: Labeling an inventory as "input" or "output" will cause errors, since these keywords are apart of the sfm language.  
 TIP 2: Writting your script first and pulling labels from the Factory Manager will prevent typos.  
-![sfm_item_pipe]()
+![sfm_item_pipe](https://github.com/coolbot100s/Modded_MC_Programming/blob/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/SuperFactoryManager/sfm_item_pipe.png?raw=true)
 
 #### Cost
 | Item | Count |
 |-|-|
 Factory Manager| 1
 Factory Manager Program Disk| 1
-Label Gun*| 1
+Label Gun*| 1  
+*\*Label Gun is a tool and is reusable*   
+![sfm-total-cost](https://github.com/coolbot100s/Modded_MC_Programming/blob/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/SuperFactoryManager/sfm_item_pipe_cost_total.png?raw=true)  
 
-*\*Label Gun is a tool item that is reusable* 
 
 ### Code
-The [itemPipe.sfm]() script is a mere 4 lines long, showcasing the ease of logistical tasks using SFM.  
+The script is a mere 4 lines long, showcasing the ease of logistical tasks using SFM.  
 ```
 every 20 ticks do
     input from in
@@ -100,7 +100,7 @@ Already, our script executes 10x faster, but we can improve it further.
 
 ### Spam
 For this test, output has no limitation on the items it can accept, however our input will only let the manager pull 128 items at a time.  
-To bypass that limit, you simply need to repeat the input operation, you can do this as many times as you'd like, for demonstration the [itemPipeCheese.sfm]() script repeats the operation 128 times. Naturally, the script will operate 128x faster, when combined with the redstone clock technique this setup executes 1280x faster than the original method.  
+To bypass that limit, you simply need to repeat the input operation, you can do this as many times as you'd like, for demonstration the [itemPipeCheese.sfm](https://github.com/coolbot100s/Modded_MC_Programming/blob/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/SuperFactoryManager/itemPipeCheese.sfm) script repeats the operation 128 times. Naturally, the script will operate 128x faster, when combined with the redstone clock technique this setup executes 1280x faster than the original method.  
 
 ### Server Impact
 In my testing, using a super fast redstone clock has broken the Factory Manager's built in profiler. However, testing with Observable indicates that, when idle, this method is 50-60 times more impactful on the server than the original script, or barely any more performant than vanilla. When active, ~100x the impact making it at least double the server cost of just using a Hopper Minecart. 
@@ -120,8 +120,8 @@ There's a few more steps involved in setting up RFTC, place the processor betwee
 Once you've created the program in a Programmer put it in the slot and insert a CPU.  
 Next, press the button above the program slot the itemPipe program is inside, this will let you allocate item and memory slots for the program.  
 Allocate one item slot, this will now have the label 0, indicating the index that the program will recognize the slot as.    
-Place a button on the front of the processor, and use it to start the program.
-
+Place a button on the front of the processor, and use it to start the program.  
+![rftc_item_pipe]()
 #### Cost
 |Item|Count|
 |-|-|
@@ -131,20 +131,20 @@ Program Card|1
 CPU Core B500|1
 FE| 4/tick
   
-![rftc_minimum_total_cost]()
+![rftc_minimum_total_cost](https://github.com/coolbot100s/Modded_MC_Programming/blob/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/RFToolsControl/rftc_item_pipe_min_cost_total.png?raw=true)  
 ### Code
-![rftc_item_pipe_code]()
+![rftc_item_pipe_code](https://github.com/coolbot100s/Modded_MC_Programming/blob/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/RFToolsControl/rftc_item_pipe_code.png?raw=true)
 The code is increadibly simple, at just 3 opcodes.  
 First a way of starting the program, in the example script we'll be using `redstone on` direct that into a Fetch Items > Push Items and direct the Push Items back into the Fetch Items. 
 This creates a very speedy loop of constantly moving items.  
 It's important to remember that RFTC programs are directional and rely on cardinal direction to define inventory locations, in the demonstration, the processor is facing East and it is assumed that the input and output or on the left and right respectively. 
 
 ### Results
-Since the B500 executes 1 operation per tick, and it takes 2 op codes to move a stack of items from input to output, it means we're moving 1 stack every 2 ticks, or 0.5 stacks/tick, but this can be upgraded
+Since the B500 executes 1 operation per tick, and it takes 2 op-codes to move a stack of items from input to output, it means we're moving 1 stack every 2 ticks, or 0.5 stacks/tick, but this can be upgraded
 
 ## RFTools Control CPUS
 The example above is the absolute cheapest construction, however, by investing more resources we can speed this program up dramatically.  
-The first step is to use a CPU Core EX2000 in place ofthe B500, this is 16 time faster but requires more rf/t.
+The first step is to use a CPU Core EX2000 in place of the B500, this is 16 time faster but requires more rf/t.
 Additionally, we can run multiple instances of our program in a single processor, one for each of the 6 program slots, if each program is given their own CPU using exclusive mode.  
 Make sure to enable exclusive mode in the processor gui.
 If we use all 6 slots and add 6 EX200 CPU cores, then we can transport items 96x faster!  
@@ -160,15 +160,14 @@ Program Card|6
 CPU Core EX2000|6
 FE|300/tick
   
-![rftc_total_cost]()
-
-
+![rftc_total_cost](https://github.com/coolbot100s/Modded_MC_Programming/blob/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/RFToolsControl/rftc_item_pipe_min_cost_total.png?raw=true)
+  
 ## CC: Tweaked
 Okay, now let's say you need to move items REALLY fast.
 
 ### Construction & Setup
 First, place a full block Wired Modem between between the input and output. 
-Unlike the [Hello World]() tests, we need to use a modem to interact with inventory peripherals.  
+Unlike the [Hello World](https://github.com/coolbot100s/Modded_MC_Programming/tree/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B01%5D%20Computing/%7B01%7D%20HelloWorld) tests, we need to use a modem to interact with inventory peripherals.  
 Now, right click the modem, it will list the names of peripherals connected to it, using the test setupthis will be something like `"storagedrawers:standard_drawers_1_#"`, make sure you copy these and keep them on a notepad, you'll need these to define the peripherals in your script.  
 Now you can place the computer on top, and import your script.  
 Note that for this, and all future tests I'll be using an Advanced Computer (turtle, pocket computer, ect.), and this will be reflected in the cost calculations. In most cases a regular Computer will suffice, but the Advanced Computer is much more convenient and reccomended.  
@@ -179,13 +178,13 @@ Note that for this, and all future tests I'll be using an Advanced Computer (tur
 Advanced Computer | 1
 Wired Modem (full)| 1
   
-![cc_item_pipe_total_cost]()
+![cc_item_pipe_total_cost](https://github.com/coolbot100s/Modded_MC_Programming/blob/main/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/ComputerCraft/cc_item_pipe_total_cost.png?raw=true)
 
 ### Code
 While relatively simple, we can already see that this is a bit more complicated than the other systems we've discussed so far.  
 First, you can't drop this build in anywhere like the other systems we've tested so far.  
-The peripheral variables (line [7]() & [8]()) expect specific blocks, in specific locations, and are numbered based on how many connections to these blocks have been made in your world, meaning you'll need to edit the script with these names every time you try to setup the script.  
-Additionally, while all the other systems we've looked at *let* you define a specific input slot, here it is required  in order to prevent unexpected behaviour. (lines [16]() &[17]())  
+The peripheral variables (line [7](https://github.com/coolbot100s/Modded_MC_Programming/blob/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/ComputerCraft/itemPipe.lua#L7) & [8](https://github.com/coolbot100s/Modded_MC_Programming/blob/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/ComputerCraft/itemPipe.lua#L8)) expect specific blocks, in specific locations, and are numbered based on how many connections to these blocks have been made in your world, meaning you'll need to edit the script with these names every time you try to setup the script.  
+Additionally, while all the other systems we've looked at *let* you define a specific input slot, here it is required  in order to prevent unexpected behaviour. (lines [16](https://github.com/coolbot100s/Modded_MC_Programming/blob/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/ComputerCraft/itemPipe.lua#L16) & [17](https://github.com/coolbot100s/Modded_MC_Programming/blob/85caea96b1e55ed13053ee1665b2972b99ea7eec/%5B02%5D%20Logistics/%5B02.1%5D%20Simple/%7B01%7D%20FastTransport/ComputerCraft/itemPipe.lua#L16))  
 In return for this comparitive rigidity and complexity, we get *much* more control, such as printing out errors when the output is missing, and transfering the exact amount neccessary when present.  
 This is a trend we'll continue to see through-out future tests, while cc:t can be a bit difficult to work with, it provides everything you need to make extremely powerful and complicated programs.
 

@@ -1,9 +1,8 @@
 # Item Transport Speed
 
-You need to move items, no matter what environment you're in, you need to move items around when you're playing Minecraft.  
+You need to move items. No matter what environment you're in you need to move items around when you're playing Minecraft.  
 Getting things from point A to point B is important, so how do our computing mods empower us to do that?  
-In this test our goal is simply to move a lot of items, we'll be using Storage Drawers with a Creative Drawer filled with cobblestone as our input, and an empty drawer with maxed out Storage Upgrades, giving our output a capacity of 458752.  
-All durations assume 20 ticks per second.  
+In this test our goal is simply to move a lot of items, we'll be using Storage Drawers with a Creative Drawer filled with cobblestone as our input, and an empty drawer with maxed out Storage Upgrades, giving our output a capacity of 458,752.    
 What's the practical application? There's very few but one that may come to mind is the ae2 Matter Condensor, if you do find yourself with an unlimited supply of items and need singularities fast, this is exactly what you're looking for.  
 
 ### Contents:
@@ -15,6 +14,7 @@ What's the practical application? There's very few but one that may come to mind
       - [Cheesing SFM](#cheesing-sfm)
     - [RFTools Control](#rftools-control)
         - [RFTools Control CPUs](#rftools-control-cpus)
+    - [CC: Tweaked](#cc-tweaked)
 - [Results](#test-results) 
 - [Additional Mods Used](#additional-mods-used)
 
@@ -130,7 +130,8 @@ Oak Button|1
 Program Card|1
 CPU Core B500|1
 FE| 4/tick
-
+  
+![rftc_minimum_total_cost]()
 ### Code
 ![rftc_item_pipe_code]()
 The code is increadibly simple, at just 3 opcodes.  
@@ -158,10 +159,42 @@ Oak Button|1
 Program Card|6
 CPU Core EX2000|6
 FE|300/tick
+  
+![rftc_total_cost]()
+
 
 ## CC: Tweaked
+Okay, now let's say you need to move items REALLY fast.
+
+### Construction & Setup
+First, place a full block Wired Modem between between the input and output. 
+Unlike the [Hello World]() tests, we need to use a modem to interact with inventory peripherals.  
+Now, right click the modem, it will list the names of peripherals connected to it, using the test setupthis will be something like `"storagedrawers:standard_drawers_1_#"`, make sure you copy these and keep them on a notepad, you'll need these to define the peripherals in your script.  
+Now you can place the computer on top, and import your script.  
+Note that for this, and all future tests I'll be using an Advanced Computer (turtle, pocket computer, ect.), and this will be reflected in the cost calculations. In most cases a regular Computer will suffice, but the Advanced Computer is much more convenient and reccomended.  
+
+#### Cost
+|Item|Count|
+|-|-|
+Advanced Computer | 1
+Wired Modem (full)| 1
+  
+![cc_item_pipe_total_cost]()
+
+### Code
+While relatively simple, we can already see that this is a bit more complicated than the other systems we've discussed so far.  
+First, you can't drop this build in anywhere like the other systems we've tested so far.  
+The peripheral variables (line [7]() & [8]()) expect specific blocks, in specific locations, and are numbered based on how many connections to these blocks have been made in your world, meaning you'll need to edit the script with these names every time you try to setup the script.  
+Additionally, while all the other systems we've looked at *let* you define a specific input slot, here it is required  in order to prevent unexpected behaviour. (lines [16]() &[17]())  
+In return for this comparitive rigidity and complexity, we get *much* more control, such as printing out errors when the output is missing, and transfering the exact amount neccessary when present.  
+This is a trend we'll continue to see through-out future tests, while cc:t can be a bit difficult to work with, it provides everything you need to make extremely powerful and complicated programs.
+
+### Results
+CC: Tweaked is able to transfer the maximum capacity of an inventory all at once instantly, making the speed relatively infinite items / tick. However, there is one consequence of this speed, in my testing looping this transfer with no restrictions caused some issues.  
+Accounting for the delay neccessary to make this stable at top speed, in practice it takes 1 tick to complete this test.  
 
 ## Test Results
+Time durations assume 20 ticks per second.
 | Mod                   | Items / tick | Stacks / tick | Items / second | Total ticks | Total time |
 |-|-|-|-|-|-|
 | CC: Tweaked           | INF          | INF           | INF            | 1           | 0:00:00 |
@@ -175,8 +208,8 @@ FE|300/tick
 | Vanilla               | 0.125        | 0.001953125   | 2.5            | 3,670,016   | 50:58:20|
 
 ## Additional Mods Used
-[Observable](https://modrinth.com/mod/observable/version/4.4.1+forge)
-[RF Tools Utility](https://modrinth.com/mod/rftools-utility/version/1.20-6.0.6)
-[Mekanism](https://modrinth.com/mod/mekanism/version/10.4.6.20)
-[Integrated Tunnels](https://modrinth.com/mod/integrated-tunnels/version/1.20.1-1.8.26)
+[Observable](https://modrinth.com/mod/observable/version/4.4.1+forge)  
+[RF Tools Utility](https://modrinth.com/mod/rftools-utility/version/1.20-6.0.6)  
+[Mekanism](https://modrinth.com/mod/mekanism/version/10.4.6.20)  
+[Integrated Tunnels](https://modrinth.com/mod/integrated-tunnels/version/1.20.1-1.8.26)  
 

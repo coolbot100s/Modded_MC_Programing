@@ -49,11 +49,11 @@ I've tried to compile a comprehensive list of the mods made for Minecraft that e
 This handy table can quickly introduce you to what mod you may be interested in, each one will have more information available in its respective section.
 | Mod | MC Versions | Loaders | Language |Computing|Displays|Redstone|Logistics|Drones|Magic|Meta|
 |--|--|--|--|--|--|--|--|--|--|--|
-|RF Tools Control|1.10-1.20.1|Forge|Visual|✅|✅|✅|✅|❌|❌|❌
+|[RF Tools Control](#rf-tools-control)|1.10-1.20.1|Forge|Visual|✅|✅|✅|✅|❌|❌|❌
 |[CC: Tweaked](#cc-tweaked-aka-computer-craft)|1.16-1.20.4|Forge & Fabric|Lua|✅|✅|✅|✅|✅|❌|❌
 |[Super Factory Manager](#super-factory-manager)|1.12.2-1.20.4|Forge| Custom|❌|❌|❌|✅|❌|❌|❌
-|Integrated Dynamics| 1.18.2-1.20.1|Forge| Item-Based|✅|✅|✅|✅|❌|❌|❌
-|Integrated Scripting| 1.18.2-1.20.1|Forge|Java Script|✅|✅|✅|✅|❌|❌|❌
+|[Integrated Dynamics](#integrated-dynamics)| 1.18.2-1.20.1|Forge| Item-Based|✅|✅|✅|✅|❌|❌|❌
+|[Integrated Scripting](#integrated-scripting)| 1.18.2-1.20.1|Forge|Java Script|✅|✅|✅|✅|❌|❌|❌
 
 ### CC: Tweaked, AKA: Computer Craft
 **[Modrinth](https://modrinth.com/mod/cc-tweaked), [Curseforge](https://www.curseforge.com/minecraft/mc-mods/cc-tweaked), [Documentation](https://tweaked.cc)**
@@ -79,11 +79,62 @@ The Lua language that powers CC: Tweaked is pretty beginner-friendly though has 
 Super Factory Manager is my personal go-to logistics system, capable of just about anything your favorite pipes mod can do, with the
 
 #### Gameplay
-
+Super factory manager is cheap and simple to setup, using the Label Gun to add as many labels as you want to any inventories in the network makes it quick to name and plan out even large complicated systems, and just as easy to see how your items are being moved at a glance.  
+SFM also offers some other quality of life and game-play features, my favorite being the slot inspector, toggable with ctrl+I that makes working with this, and all other mods in this list much easier.  
 
 #### Versatility
-This mod is meant purely for Logistics, you won't be able to do anything fancy with it, but it makes many, many everyday tasks of modded MC leagues simpler, and more efficient.
+This mod is meant purely for Logistics, you won't be able to do anything fancy with it, but it makes many everyday tasks of modded MC leagues simpler, and more efficient.
 
 #### Difficulty
-SFM is without a doubt the easiest mod to get into, if you have no programming experience or interest in coding but want to upgrade your factories and logistics systems this is the mod you should pick, it's custom scripting language is easy to read, and easy learn and the in-game editor is great. 
+SFM is without a doubt the easiest mod to get into, if you have no programming experience or interest in coding but want to upgrade your factories and logistics systems this is the mod you should pick, it's custom scripting language is easy to read, easy learn, and the in-game editor is great. 
 
+### RF Tools Control
+**[Modrinth](https://modrinth.com/mod/rftools-control), [Curseforge](https://www.curseforge.com/minecraft/mc-mods/rftools-control), [Documentation](https://github.com/McJtyMods/RFToolsControl/wiki)**  
+RFtools control is a unique system with a custom 2D visual scripting language made up of simple low-level op-codes, a part of the larger RFTools suite it has a lot of character and charm but is often overlooked for it's intimidating complexity.  
+
+#### Gameplay
+RFTC offers a modular system for building your computers from scratch, you'll be installing CPU cores, ram modules and network cards depending on the needs of your system, this feeling of building the machine you need for the job makes it an immsersive and well balanced experiance.  
+I think it's one of the most fun *mods* to play with as a result.
+
+#### Versatility
+RFTC is a nearly full-fledged computing mod offering you the ability to do almost anything you want with the low-level tools provided. It's an extremely powerful and fast system for logistics, displays, and even interactive guis, its support for other features from the RFTools ecosystem makes it a great way to interact with other powerful tools, and it offers it's own autocrafting system.
+
+#### Difficulty
+The constraints of RFTCs low-level visual scripting language and hard limit on program size often make writing programs for the system it's own form of puzzle, it is a fun and rewarding puzzle to solve, however you're left to your own devices depending on the version you're playing.  
+Documentation and support are lacking, and paired with the user interface quirks common amongst RFTools mods, it can be at times frustrating.  
+That said, it does feature a great debuging and error reporting system, letting you step through a program one operation at a time, and read memory values, however this system is still a bit clunky to work with as a result of thoe common UI issues.   
+
+### Integrated Dynamics
+**[Modrinth](https://modrinth.com/mod/integrated-dynamics), [Curseforge](https://www.curseforge.com/minecraft/mc-mods/integrated-dynamics), [Documentation](https://integrateddynamics.rubensworks.net/book/)**  
+Integrated Dynamics (and it's many addons such as Integrated Tunnels) are a mainstay mod in many modpacks, offering you powerful data and logistics abilities through an item-based functional programming system.  
+It is a Logistics, Networking, and Programming system all in one, featuring abilities like entity interaction or reading 4th wall world data that many other systems don't include.
+
+#### Gameplay
+Integrated Dynamics has a progression system that feels natural to other tech mods, the special menril wood and it's products will be the core of your progression, you've probably already used it's squeezer or basin before for other recipes.  
+It fits in seamlessly to Minecraft and has it's own built-in quest system, with it's special guidebook offering you in-game rewards for completing tasks.  
+
+#### Versatility
+Integrated Dynamics, through it's addons like Integrated Tunnels, supports all sorts of interactions with the world, and even limited remote interactions through Offset Enhancements that let almost every interaction happen at long range. As mentioned it has some unique features for entity interaction, player simulation, and it's own autocrafting system through Integrated Crafting.
+
+#### Difficulty
+The ducumentation and interactive in-game tutorials make it fun and easy to learn, however the complexity of the system can be difficult to get a hold of.  
+The functional programming paradaigm, and unique item-based programming method will result in even relatively simply programs requiring lots of function and variable nesting that can get difficult to keep track of, writting things down on a notepad and planning your systems out ahead of time, or making large walls of displays to track each step in your pgogram is reccomended.  
+Luckily there is a handy debuging system that will alert you to where errors are occuring in your functions, but this will still often lead to having to start from scratch if you're not careful.  
+With no central controller block or terminal output like many of the other systems that offer the same level of complexity, it is one of the more alien-feeling systems.  
+
+### Integrated Scripting
+**[Modrinth](https://modrinth.com/mod/integrated-scripting), [Curseforge](https://www.curseforge.com/minecraft/mc-mods/integrated-scripting), [Documentation](https://integrateddynamics.rubensworks.net/book/manual/main/integratedscripting/)**  
+This is an Integrated Dynamics addon, however, it introduces an entirely new way of programming your network and machines, allowing you to do everything ID can do using JavaScript.  
+
+#### Gameplay
+Integrated Scripting naturally fits seemlessly into the ID ecosystem, but introduces script drives and drive bays.  
+In order to execute your scripts, the variable card referancing it must be attatched to a network storing the disk that your code is written on.  
+
+#### Versatility  
+Integrated Scripting offers all the versatility of ID, but making it easier to interface with, however because a card must be conencted to the network containing a scripting disk, it makes it less practical for standalone simple machines.
+
+#### Difficulty
+I find this to be easier to work with than the item based system of Integrated Dynamics, and it does make much of the confusing parts of ID simpler.  
+Even if you've never written JavaScript before, this will likely feel more natural for thoes who have experiance writting code.  
+It also enables a output file you can use to read debug messages from your operators.  
+However, when compared to other scripting mods like SFM, or CC:T the in-game editor can be difficult to work with, using an out-of-game IDE is almost neccessary.  

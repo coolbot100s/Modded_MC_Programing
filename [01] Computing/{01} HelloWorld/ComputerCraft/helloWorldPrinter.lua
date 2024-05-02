@@ -19,3 +19,5 @@ printer.write("Hello, world!")
 if not printer.endPage() then
   error("Cannot end the page. Is there enough space?")
 end
+
+exit()

@@ -5,3 +5,4 @@
 
 local speaker = peripheral.find("speaker")
 speaker.playSound("minecraft:entity.villager.yes")
+exit()

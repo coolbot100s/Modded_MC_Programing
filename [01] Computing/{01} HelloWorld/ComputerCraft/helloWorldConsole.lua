@@ -4,3 +4,4 @@
 -- Print "Hello, world!" to the terminal when the program is run
 
 print("Hello, world!")
+exit()
